@@ -29,10 +29,7 @@ body {
   margin-top: 6vh;
   margin-bottom: 4vh; */
 
-  background:
-    radial-gradient(1200px 800px at 20% 10%, rgba(20, 180, 245, .18), transparent 60%),
-    radial-gradient(1000px 700px at 80% 80%, rgba(70, 90, 250, .14), transparent 65%),
-    linear-gradient(180deg, #0b0f14 0%, #0a1318 45%, #0a1216 100%);
+  background: radial-gradient(1200px 800px at 20% 10%, rgb(255 255 255 / 18%), transparent 60%), radial-gradient(1000px 700px at 80% 80%, rgba(70, 90, 250, .14), transparent 65%), linear-gradient(180deg, #9a9292 0%, #000000bf 45%, #6c5c4d 100%);
   position: relative;
   isolation: isolate;
 }
