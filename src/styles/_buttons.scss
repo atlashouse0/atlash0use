@@ -1,0 +1,69 @@
+.instagram-btn {
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    .icon-button{
+        margin-top: 1px;
+    }
+    border: 1px solid #bc1888;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+}
+
+.linkedin-btn {
+    background-color: #0e76a8 ;
+}
+
+.github-btn {
+    background-color: darkslateblue;
+}
+
+.discord-btn {
+    background-color: #7289da;
+}
+
+.profile-btn{
+    background-color: #54b8fa;
+}
+
+.codepen-btn{
+    background-color: rgb(49, 49, 53);
+    &:hover span{
+        color: rgb(151, 22, 236)!important;
+    }
+}
+
+.twitter-btn{
+    background-color: #1d9bf0;
+}
+
+/* --- New: Facebook & Telegram variants --- */
+.facebook-btn {
+  /* brand primary */
+  background: #1877F2;
+  /* optional depth */
+  background: linear-gradient(180deg, #1e7af2 0%, #125bd9 100%);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.telegram-btn {
+  background: #229ED9;
+  background: linear-gradient(180deg, #28a8ea 0%, #1f8ec9 100%);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* keep these (you already have them) */
+.whatsapp-btn { background-color: #25D366; color:#fff; }
+.linkedin-btn  { background-color: #0e76a8; color:#fff; }
+
+/* optional: a consistent hover affordance for all social buttons */
+.facebook-btn,
+.telegram-btn,
+.whatsapp-btn,
+.linkedin-btn {
+  &:hover { filter: brightness(1.05); }
+}

@@ -1,0 +1,25 @@
+.squares {
+    li {
+        position: absolute;
+        z-index: -1;
+        width: 40px;
+        height: 40px;
+        background-color: rgb(100, 78, 5);
+        display: block;
+        bottom: -40px;
+        animation: up infinite alternate;
+    }
+}
+
+@keyframes up {
+	from{
+		opacity: 0;
+		transform: translateY(0);
+	} 
+	50%{
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-1000px) rotate(960deg)
+	}
+}
