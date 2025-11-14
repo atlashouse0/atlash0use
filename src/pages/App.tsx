@@ -104,7 +104,7 @@ function App() {
       
   <div className="page-wrapper">
       <BackgroundStars />
-       <div className="top-header"></div>
+       {/* <div className="top-header"></div> */}
      <button className="copy-btn" onClick={handleCopy} aria-label="Copy Linktree">
   <FiShare className="copy-icon" />
 </button>
