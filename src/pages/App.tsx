@@ -2,16 +2,23 @@ import { useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 // import { Logo } from '../Logo'
 import { Button } from '../components/buttons';
-import { Squares } from '../components/squares';
-import atlasHouseImage from '../assets/atlas.jpg';
+import BackgroundStars from '../components/BackgroundStars';
+// import { Squares } from '../components/squares';
+import atlasHouseImage from '../assets/houselogo.png';
+import { FiShare } from "react-icons/fi";
+import { FaFacebookF, FaWhatsapp, FaTelegramPlane, FaLinkedinIn } from "react-icons/fa";
+
 import './App.scss';
 import '../styles/_squares.scss';
+
+
 
 type Btn = {
   name: string;
   class: 'facebook-btn' | 'whatsapp-btn' | 'telegram-btn' | 'linkedin-btn';
   link: string;
   size: number;
+  
 };
 
 const Btn = [
@@ -49,12 +56,23 @@ function App() {
     }
   }, []);
 
+ const handleCopy = () => {
+  const linktreeUrl = "https://atlashouse0.github.io/atlash0use/";
+  navigator.clipboard.writeText(linktreeUrl);
+  const btn = document.querySelector(".copy-btn");
+  if (btn) {
+    btn.classList.add("copied");
+    setTimeout(() => btn.classList.remove("copied"), 2000);
+  }
+};
+
   const Btns: Btn[] = [
   {
     name: 'Facebook',
     class: 'facebook-btn',
     link: 'https://www.facebook.com/people/Atlas-House/61566570806131/',
     size: 22,
+    
   },
   {
     name: 'WhatsApp',
@@ -82,10 +100,15 @@ function App() {
   },
 ];
 
-
   return (
+      
   <div className="page-wrapper">
-    <div className="box">
+      <BackgroundStars />
+       <div className="top-header"></div>
+     <button className="copy-btn" onClick={handleCopy} aria-label="Copy Linktree">
+  <FiShare className="copy-icon" />
+</button>
+<div className="box">
       <div className="grid-avatar">
         <a
           href="https://www.facebook.com/people/Atlas-House/61566570806131/"
@@ -114,14 +137,58 @@ function App() {
       </div>
     </div>
 
-    <footer className="site-footer" aria-label="Site footer">
-      <p className="tagline">We’re happy to meet you!</p>
-      <p className="rights">
-        © {new Date().getFullYear()} Atlas <span className="brand">House</span> — All rights reserved.
-      </p>
-    </footer>
 
-    <Squares />
+
+  <footer className="site-footer" aria-label="Site footer">
+  <p className="tagline">We’re happy to meet you!</p>
+
+  {/* ✅ Social Icons Row */}
+  <div className="social-icons">
+  <a
+    href="https://www.facebook.com/people/Atlas-House/61566570806131/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebookF />
+  </a>
+
+  <a
+    href="https://wa.me/201123907033"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
+    <FaWhatsapp />
+  </a>
+
+  <a
+    href="https://t.me/atlashouse0"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Telegram"
+  >
+    <FaTelegramPlane />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/company/atlas-house0/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <FaLinkedinIn />
+  </a>
+</div>
+
+
+  <p className="rights">
+    © {new Date().getFullYear()} Atlas <span className="brand">House</span> — All rights reserved.
+  </p>
+</footer>
+
+
+    {/* <Squares /> */}
   </div>
 );
 

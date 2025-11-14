@@ -1,16 +1,15 @@
-// components/buttons.tsx
+import React from 'react';
 import { FaFacebookF, FaTelegramPlane } from 'react-icons/fa';
 import { BsWhatsapp } from 'react-icons/bs';
 import { AiOutlineLinkedin } from 'react-icons/ai';
-import React from 'react';
 
 type Variant = 'facebook-btn' | 'whatsapp-btn' | 'telegram-btn' | 'linkedin-btn';
 
 type PropsButton = {
-  class: Variant;
+  class: Variant | string;
   link: string;
   size: number;
-  label?: string; // <-- NEW: optional label override
+  label?: string;
 };
 
 const defaultLabel: Record<Variant, string> = {
@@ -28,21 +27,22 @@ const iconMap: Record<Variant, React.ComponentType<{ fontSize?: number; classNam
 };
 
 export function Button({ class: variant, link, size, label }: PropsButton) {
-  const Icon = iconMap[variant];
-  const text = label || defaultLabel[variant];  // <-- use override if provided
+  const baseVariant = variant.split(' ')[0] as Variant;
+  const Icon = iconMap[baseVariant];
+  const text = label || defaultLabel[baseVariant];
 
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={variant}
+      className={`social-btn ${variant}`}
       aria-label={text}
       title={text}
     >
       <span className="icon-button-wrap">
         <Icon fontSize={size} className="icon-button" />
-        {text}
+        <span className="btn-text">{text}</span>
       </span>
     </a>
   );
